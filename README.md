@@ -158,4 +158,5 @@ Always consult a **qualified healthcare professional** for health concerns.
 ---
 
 📘 **Author:** Veera Karthick  
-🎓 *AI & Data Science Student | Health-Tech Innovator*
+🎓 *AI & Data Science Student*
+
