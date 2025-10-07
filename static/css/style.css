@@ -1,0 +1,174 @@
+:root {
+    --bg-color: #121826;
+    --card-bg: #1f2937;
+    --text-color: #e5e7eb;
+    --subtext-color: #9ca3af;
+    --accent-color: #3b82f6;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --green: #22c55e;
+    --font-family: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--subtext-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #374151;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.instructions {
+    color: var(--subtext-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.record-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem auto;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.record-button:hover {
+    background-color: #60a5fa;
+}
+
+.record-button.recording {
+    background-color: var(--red);
+    animation: pulse 1.5s infinite;
+}
+
+.mic-icon {
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.status {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.timer {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--subtext-color);
+}
+
+/* Results Card */
+.results-card h2 { margin-bottom: 1.5rem; }
+.result-item {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+#risk-level-container { font-weight: 600; font-size: 1.4rem; }
+#risk-level.low { color: var(--green); }
+#risk-level.medium { color: var(--yellow); }
+#risk-level.high { color: var(--red); }
+
+.feedback {
+    background-color: #374151;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    text-align: left;
+    line-height: 1.6;
+    color: var(--subtext-color);
+}
+
+.spectrogram {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 1px solid #4b5563;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s;
+}
+.btn:hover { background-color: #60a5fa; }
+
+
+/* Loader */
+.loader {
+    border: 8px solid #374151;
+    border-top: 8px solid var(--accent-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+footer {
+    margin-top: 2rem;
+}
+.disclaimer {
+    font-size: 0.8rem;
+    color: var(--subtext-color);
+    line-height: 1.5;
+}

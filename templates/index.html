@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acoustic Sentry - Cough Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Acoustic Sentry</h1>
+            <p class="subtitle">Early Respiratory Disease Triage via AI Cough Analysis</p>
+        </header>
+
+        <main id="main-content">
+            <div class="card" id="recorder-card">
+                <h2>Record Your Cough</h2>
+                <p class="instructions">Click the microphone to start. Record a single, clear cough for 3-5 seconds, then click again to stop and analyze.</p>
+                <button id="record-button" class="record-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mic-icon">
+                        <path d="M12 14a3 3 0 003-3V5a3 3 0 00-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0V5a5 5 0 0110 0v6z"></path>
+                        <path d="M12 18.5a.5.5 0 01.5.5v2.5a.5.5 0 01-1 0v-2.5a.5.5 0 01.5-.5zM8 22a1 1 0 01-1-1v-2.5a1 1 0 012 0V21a1 1 0 01-1 1zM16 22a1 1 0 01-1-1v-2.5a1 1 0 012 0V21a1 1 0 01-1 1z"></path>
+                    </svg>
+                </button>
+                <div id="status-text" class="status">Ready to record</div>
+                <div id="timer" class="timer">00:00</div>
+            </div>
+
+            <div class="loader" id="loader" style="display: none;"></div>
+
+            <div class="card results-card" id="results-card" style="display: none;">
+                <h2>Analysis Result</h2>
+                <div class="result-item" id="risk-level-container">
+                    Risk Level: <span id="risk-level"></span>
+                </div>
+                <div class="result-item">
+                    Confidence: <span id="confidence-score"></span>%
+                </div>
+                <p class="feedback" id="feedback-text"></p>
+                <h3>Cough Spectrogram</h3>
+                <img id="spectrogram-img" src="" alt="Cough Spectrogram" class="spectrogram">
+                <button id="reset-button" class="btn">Analyze Another</button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="disclaimer"><strong>Disclaimer:</strong> This is a proof-of-concept prototype for the CuraQuest Ideathon. The analysis is simulated and should not be used for medical diagnosis. Always consult a qualified healthcare professional.</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
