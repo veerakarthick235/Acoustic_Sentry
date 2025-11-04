@@ -1,6 +1,5 @@
 # 🎧 Acoustic Sentry: AI Cough Analysis Prototype
 
-**Acoustic Sentry** is a **web-based prototype** designed for the **CuraQuest Ideathon**.  
 It demonstrates an innovative system for analyzing **cough sounds using AI** to provide an **initial risk assessment** for respiratory diseases.  
 
 The application records a user’s cough in the browser, sends it to a **Python Flask backend** for analysis, and displays a **simulated risk level** along with a **visual spectrogram** of the audio.
@@ -159,4 +158,5 @@ Always consult a **qualified healthcare professional** for health concerns.
 
 📘 **Author:** Veera Karthick  
 🎓 *AI & Data Science Student*
+
 
