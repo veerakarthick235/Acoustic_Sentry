@@ -129,4 +129,68 @@ def analyze_cough():
 # --- Main Execution Block ---
 if __name__ == '__main__':
     # Runs the Flask app with debug mode on
+
     app.run(debug=True)
+
+
+
+Procedure
+
+1. Dataset Preparation
+
+Load a multivariate dataset (e.g., Iris, Wine, or any custom dataset).
+
+Perform preprocessing:
+
+Handle missing values if any.
+
+Standardize the features using StandardScaler to ensure zero mean and unit variance.
+
+
+
+
+2. Applying PCA (Principal Component Analysis)
+
+Import PCA from sklearn.decomposition.
+
+Choose the number of principal components (e.g., 2 for visualization).
+
+Fit PCA to the standardized dataset and transform it.
+
+Plot the transformed data in 2D space.
+
+Analyze variance explained by each component using the explained variance ratio.
+
+
+
+3. Applying KPCA (Kernel PCA)
+
+Import KernelPCA from sklearn.decomposition.
+
+Use a non-linear kernel (e.g., ‘rbf’, ‘poly’, or ‘sigmoid’) to capture complex patterns.
+
+Fit and transform the standardized dataset using KPCA.
+
+Visualize the transformed feature space to observe non-linear separability improvements.
+
+
+
+4. Applying SVD (Singular Value Decomposition)
+
+Import TruncatedSVD from sklearn.decomposition.
+
+Apply SVD to the dataset to reduce dimensions.
+
+Compare the transformed space with PCA.
+
+Observe how SVD preserves structure in sparse or high-dimensional data (commonly used in text or image datasets).
+
+
+
+5. Comparison and Analysis
+
+Compare the variance retention or reconstruction error across PCA, KPCA, and SVD.
+
+Visualize clusters or separability in the reduced feature spaces.
+
+Interpret how each method improves understanding of the dataset structure.
