@@ -184,3 +184,39 @@ class HDLC_Framing {
     }
 }
 
+
+
+
+# Sentiment Analysis using LSTM (Easy Version)
+
+from tensorflow.keras.datasets import imdb
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Embedding, LSTM, Dense
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+# Step 1: Load dataset
+max_words = 5000
+max_len = 100
+(x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=max_words)
+
+# Step 2: Preprocess (pad sequences)
+x_train = pad_sequences(x_train, maxlen=max_len)
+x_test = pad_sequences(x_test, maxlen=max_len)
+
+# Step 3: Build LSTM model
+model = Sequential()
+model.add(Embedding(max_words, 32, input_length=max_len))
+model.add(LSTM(64))
+model.add(Dense(1, activation='sigmoid'))
+
+# Step 4: Compile model
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+# Step 5: Train model
+print("Training model... Please wait.")
+model.fit(x_train, y_train, epochs=2, batch_size=64, validation_data=(x_test, y_test))
+
+# Step 6: Evaluate
+loss, accuracy = model.evaluate(x_test, y_test)
+print("\n✅ Test Accuracy:", accuracy)
+
