@@ -220,3 +220,67 @@ model.fit(x_train, y_train, epochs=2, batch_size=64, validation_data=(x_test, y_
 loss, accuracy = model.evaluate(x_test, y_test)
 print("\n✅ Test Accuracy:", accuracy)
 
+
+
+
+
+
+
+
+
+
+# Sentiment Analysis using LSTM
+
+# Step 1: Import Libraries
+import numpy as np
+from tensorflow.keras.datasets import imdb
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Embedding, LSTM, Dense
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+# Step 2: Load Dataset
+max_features = 5000  # Number of words to consider as features
+maxlen = 200         # Cut texts after this number of words
+(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=max_features)
+
+# Step 3: Preprocess Data
+X_train = pad_sequences(X_train, maxlen=maxlen)
+X_test = pad_sequences(X_test, maxlen=maxlen)
+
+# Step 4: Build LSTM Model
+model = Sequential()
+model.add(Embedding(max_features, 128, input_length=maxlen))
+model.add(LSTM(128, dropout=0.2, recurrent_dropout=0.2))
+model.add(Dense(1, activation='sigmoid'))
+
+# Step 5: Compile the Model
+model.compile(loss='binary_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+# Step 6: Train the Model
+print("Training the model...")
+history = model.fit(X_train, y_train,
+                    batch_size=64,
+                    epochs=2,
+                    validation_data=(X_test, y_test))
+
+# Step 7: Evaluate the Model
+score, acc = model.evaluate(X_test, y_test, batch_size=64)
+print("\nTest Score:", score)
+print("Test Accuracy:", acc)
+
+# Step 8: Make Predictions
+sample_review = "This movie was absolutely fantastic! The story and acting were great."
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+tokenizer = Tokenizer(num_words=max_features)
+tokenizer.fit_on_texts([sample_review])
+seq = tokenizer.texts_to_sequences([sample_review])
+padded = pad_sequences(seq, maxlen=maxlen)
+pred = model.predict(padded)
+sentiment = "Positive 😀" if pred[0][0] > 0.5 else "Negative 😞"
+
+print("\nSample Review:", sample_review)
+print("Predicted Sentiment:", sentiment)
