@@ -125,7 +125,6 @@ def analyze_cough():
         print(f"An error occurred in /analyze route: {e}")
         return jsonify({'error': 'An internal server error occurred'}), 500
 
-
 # --- Main Execution Block ---
 if __name__ == '__main__':
     # Runs the Flask app with debug mode on
@@ -134,91 +133,6 @@ if __name__ == '__main__':
 
 
 
-import java.util.*;
-
-class HDLC_Framing {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-
-        // ---------- BIT STUFFING ----------
-        System.out.println("Enter bit stream:");
-        String bits = sc.nextLine();
-        String stuffed = "";
-        int count = 0;
-
-        for (int i = 0; i < bits.length(); i++) {
-            char b = bits.charAt(i);
-            stuffed += b;
-            if (b == '1') {
-                count++;
-                if (count == 5) {
-                    stuffed += '0'; // insert 0 after five 1’s
-                    count = 0;
-                }
-            } else {
-                count = 0;
-            }
-        }
-
-        System.out.println("\nBit Stuffed Data: " + stuffed);
-
-        // ---------- CHARACTER STUFFING ----------
-        System.out.println("\nEnter message for character stuffing:");
-        String msg = sc.nextLine();
-
-        char FLAG = '~';
-        char ESC = '}';
-        String stuffedMsg = "~"; // start flag
-
-        for (int i = 0; i < msg.length(); i++) {
-            char c = msg.charAt(i);
-            if (c == FLAG || c == ESC)
-                stuffedMsg += ESC; // add escape
-            stuffedMsg += c;
-        }
-
-        stuffedMsg += "~"; // end flag
-        System.out.println("\nCharacter Stuffed Frame: " + stuffedMsg);
-
-        sc.close();
-    }
-}
-
-
-
-
-# Sentiment Analysis using LSTM (Easy Version)
-
-from tensorflow.keras.datasets import imdb
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, LSTM, Dense
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-
-# Step 1: Load dataset
-max_words = 5000
-max_len = 100
-(x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=max_words)
-
-# Step 2: Preprocess (pad sequences)
-x_train = pad_sequences(x_train, maxlen=max_len)
-x_test = pad_sequences(x_test, maxlen=max_len)
-
-# Step 3: Build LSTM model
-model = Sequential()
-model.add(Embedding(max_words, 32, input_length=max_len))
-model.add(LSTM(64))
-model.add(Dense(1, activation='sigmoid'))
-
-# Step 4: Compile model
-model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-
-# Step 5: Train model
-print("Training model... Please wait.")
-model.fit(x_train, y_train, epochs=2, batch_size=64, validation_data=(x_test, y_test))
-
-# Step 6: Evaluate
-loss, accuracy = model.evaluate(x_test, y_test)
-print("\n✅ Test Accuracy:", accuracy)
 
 
 
@@ -229,58 +143,172 @@ print("\n✅ Test Accuracy:", accuracy)
 
 
 
-# Sentiment Analysis using LSTM
 
-# Step 1: Import Libraries
-import numpy as np
-from tensorflow.keras.datasets import imdb
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, LSTM, Dense
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-# Step 2: Load Dataset
-max_features = 5000  # Number of words to consider as features
-maxlen = 200         # Cut texts after this number of words
-(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=max_features)
 
-# Step 3: Preprocess Data
-X_train = pad_sequences(X_train, maxlen=maxlen)
-X_test = pad_sequences(X_test, maxlen=maxlen)
 
-# Step 4: Build LSTM Model
-model = Sequential()
-model.add(Embedding(max_features, 128, input_length=maxlen))
-model.add(LSTM(128, dropout=0.2, recurrent_dropout=0.2))
-model.add(Dense(1, activation='sigmoid'))
 
-# Step 5: Compile the Model
-model.compile(loss='binary_crossentropy',
-              optimizer='adam',
-              metrics=['accuracy'])
 
-# Step 6: Train the Model
-print("Training the model...")
-history = model.fit(X_train, y_train,
-                    batch_size=64,
-                    epochs=2,
-                    validation_data=(X_test, y_test))
 
-# Step 7: Evaluate the Model
-score, acc = model.evaluate(X_test, y_test, batch_size=64)
-print("\nTest Score:", score)
-print("Test Accuracy:", acc)
 
-# Step 8: Make Predictions
-sample_review = "This movie was absolutely fantastic! The story and acting were great."
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-tokenizer = Tokenizer(num_words=max_features)
-tokenizer.fit_on_texts([sample_review])
-seq = tokenizer.texts_to_sequences([sample_review])
-padded = pad_sequences(seq, maxlen=maxlen)
-pred = model.predict(padded)
-sentiment = "Positive 😀" if pred[0][0] > 0.5 else "Negative 😞"
 
-print("\nSample Review:", sample_review)
-print("Predicted Sentiment:", sentiment)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here is a clear, step-by-step guide on how to perform this HBase experiment inside your college lab. Follow these steps exactly and you will complete the practical smoothly.
+
+
+---
+
+✅ How to Perform the HBase Experiment in the Lab
+
+1. Start Hadoop Services
+
+Before using HBase, Hadoop must be running.
+
+Open terminal and run:
+
+start-dfs.sh
+start-yarn.sh
+
+Check if it is running:
+
+jps
+
+You should see:
+
+Namenode
+
+Datanode
+
+SecondaryNamenode
+
+ResourceManager
+
+NodeManager
+
+
+
+---
+
+2. Start HBase
+
+Run:
+
+start-hbase.sh
+
+Check if it started:
+
+jps
+
+You should see:
+
+HMaster
+
+HRegionServer
+
+
+
+---
+
+3. Open HBase Shell
+
+hbase shell
+
+Now you are inside the HBase environment.
+
+
+---
+
+🔹 Perform the Experiment Commands
+
+(1) Create a Table
+
+create 'student', 'personal', 'academic'
+
+
+---
+
+(2) Insert Data
+
+put 'student', '1', 'personal:name', 'Veera'
+put 'student', '1', 'personal:age', '21'
+put 'student', '1', 'academic:dept', 'AI&DS'
+put 'student', '1', 'academic:year', '3'
+
+
+---
+
+(3) Retrieve Data
+
+get 'student', '1'
+
+
+---
+
+(4) Delete Data
+
+Delete one column:
+
+delete 'student', '1', 'personal:age'
+
+Delete full row:
+
+deleteall 'student', '1'
+
+
+---
+
+🧪 4. Exit HBase Shell
+
+exit
+
+
+---
+
+🛑 5. Stop Services After Work
+
+stop-hbase.sh
+stop-dfs.sh
+stop-yarn.sh
+
+
+---
+
+🎓 This is exactly what you will do in the lab.
+
+If you want, I can also give you a lab observation table, viva questions, or a PDF version for submission.
