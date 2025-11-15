@@ -312,3 +312,353 @@ stop-yarn.sh
 🎓 This is exactly what you will do in the lab.
 
 If you want, I can also give you a lab observation table, viva questions, or a PDF version for submission.
+
+
+
+
+
+
+
+
+
+
+Below is the complete Multimedia & Animation Lab record answer for
+“Make a video, compress it, and convert it to other formats like MP4.”
+(Simple, clear, and suitable for submission.)
+
+
+---
+
+Experiment: Video Creation, Compression & Format Conversion
+
+Aim
+
+To create a video, apply compression techniques to reduce its file size, and convert the video into other popular formats such as MP4 using multimedia tools.
+
+
+---
+
+Algorithm
+
+1. Video Creation
+
+1. Start the video creation software (e.g., Windows Movie Maker, Adobe Premiere, OpenShot, Kdenlive).
+
+
+2. Import images, audio, and video clips.
+
+
+3. Arrange clips on the timeline in the required order.
+
+
+4. Add transitions, titles, and effects if needed.
+
+
+5. Export the project as an uncompressed or high-quality video file.
+
+
+
+2. Video Compression
+
+1. Open any compression/conversion tool (e.g., HandBrake, VLC, FFmpeg).
+
+
+2. Load the high-quality video file.
+
+
+3. Select a compression preset (H.264 or H.265).
+
+
+4. Set output resolution and bitrate.
+
+
+5. Start compression to reduce the file size.
+
+
+
+3. Video Format Conversion
+
+1. Open the video converter tool.
+
+
+2. Import the compressed video file.
+
+
+3. Choose the output format (MP4, AVI, MKV, MOV, etc.).
+
+
+4. Select the codec (H.264 for MP4).
+
+
+5. Convert and save the final file.
+
+
+
+
+---
+
+Procedure
+
+A. Creating a Video
+
+1. Open OpenShot / Windows Movie Maker / any lab software.
+
+
+2. Click Import Files and load pictures, audio, or video clips.
+
+
+3. Drag and drop the media into the timeline.
+
+
+4. Adjust clip duration, add text titles, transitions, and background music.
+
+
+5. Go to Export Video → choose High Quality → save as .mp4 or .avi.
+
+
+
+
+---
+
+B. Compressing the Video
+
+(Using HandBrake / VLC / FFmpeg)
+
+1. Open HandBrake.
+
+
+2. Click Open Source and select the exported video.
+
+
+3. Choose a preset like Fast 720p30.
+
+
+4. Under Video, select:
+
+Video Codec: H.264 (x264)
+
+Bitrate: 1000–2000 kbps
+
+
+
+5. Choose the destination path and click Start Encode.
+
+
+6. The compressed video is generated with lower file size.
+
+
+
+
+---
+
+C. Converting Video Format
+
+(Using VLC or FFmpeg)
+
+Using VLC:
+
+1. Open VLC → Media → Convert/Save.
+
+
+2. Add the compressed video file.
+
+
+3. Select the output profile (e.g., Video – H.264 + MP3 (MP4)).
+
+
+4. Choose destination file name with extension .mp4, .avi, or .mkv.
+
+
+5. Click Start to convert.
+
+
+
+Using FFmpeg (command line):
+
+ffmpeg -i input.avi output.mp4
+
+
+---
+
+Results
+
+1. A video was successfully created using multimedia editing software.
+
+
+2. The created video was compressed using H.264 codec, reducing the file size without much quality loss.
+
+
+3. The compressed video was converted into different formats such as MP4, AVI, and MKV using VLC/FFmpeg.
+
+
+4. Thus, video creation, compression, and format conversion were achieved successfully.
+
+
+
+
+---
+
+If you want, I can also give:
+
+✅ Viva Questions & Answers
+✅ Thanglish version
+✅ Diagram / workflow figure
+Just tell me!
+
+
+Below are the best Viva Voce questions and answers for the experiment
+“Video Creation, Compression & Conversion” — professional, clear, and suitable for lab exams.
+
+
+---
+
+Viva Voce Questions & Answers
+
+1. What is video compression?
+
+Video compression is the process of reducing the size of a video file by removing redundant data while maintaining acceptable visual quality.
+
+
+---
+
+2. Why do we need to compress videos?
+
+To reduce storage space, decrease upload/download time, and enable smooth streaming on various devices.
+
+
+---
+
+3. What are the two types of compression?
+
+Lossless Compression – No quality loss.
+
+Lossy Compression – Some quality is lost but reduces file size significantly.
+
+
+
+---
+
+4. Name any two video compression codecs.
+
+H.264 and H.265.
+
+
+---
+
+5. What is a video codec?
+
+A codec (Coder-Decoder) is a software or hardware tool used to compress and decompress video files.
+
+
+---
+
+6. What are popular video file formats?
+
+MP4, AVI, MKV, MOV, FLV.
+
+
+---
+
+7. What is the difference between a format and a codec?
+
+A format is a container (e.g., MP4), while a codec is the compression method used inside the container (e.g., H.264).
+
+
+---
+
+8. Which codec is commonly used in MP4 format?
+
+H.264.
+
+
+---
+
+9. What tools are used for video conversion?
+
+VLC Media Player, FFmpeg, HandBrake, Adobe Media Encoder.
+
+
+---
+
+10. What is FFmpeg?
+
+FFmpeg is a command-line tool used for video editing, conversion, and compression.
+
+
+---
+
+11. Write an FFmpeg command to convert video to MP4.
+
+ffmpeg -i input.avi output.mp4
+
+
+---
+
+12. What is bitrate?
+
+Bitrate is the amount of data processed per second in a video and affects both file size and quality.
+
+
+---
+
+13. How does reducing bitrate affect video quality?
+
+Lower bitrate reduces file size but may decrease quality.
+
+
+---
+
+14. What is frame rate?
+
+Frame rate (fps) is the number of video frames displayed per second.
+
+
+---
+
+15. How does resolution affect video quality?
+
+Higher resolution gives better clarity but increases file size.
+
+
+---
+
+16. What is transcoding?
+
+Transcoding is converting a video from one format or codec to another.
+
+
+---
+
+17. What is a container format?
+
+A container format stores video, audio, subtitles, and metadata in one file.
+
+
+---
+
+18. What is H.265 (HEVC)?
+
+A modern codec that provides better compression efficiency compared to H.264.
+
+
+---
+
+19. Why is MP4 widely used?
+
+It is compatible with almost all devices, offers good compression, and maintains high quality.
+
+
+---
+
+20. What is the purpose of creating a video in lab experiments?
+
+To understand video production workflow, editing, compression techniques, and format conversion.
+
+
+---
+
+If you want, I can also generate:
+✅ Short answers version
+✅ 25 or 50 more Viva questions
+✅ Notes for exam
+Just tell me!
